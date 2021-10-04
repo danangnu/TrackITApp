@@ -1,0 +1,15 @@
+<div class="container">
+    <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.dbstffid}}</td>
+          <td>{{user.dbstffpswd}}</td>
+        <tr>
+    </table>
+</div>

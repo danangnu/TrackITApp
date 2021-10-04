@@ -7,9 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class KeywordsController : ControllerBase
+    public class KeywordsController : BaseApiController
     {
         private readonly DataContext _context;
         public KeywordsController(DataContext context)

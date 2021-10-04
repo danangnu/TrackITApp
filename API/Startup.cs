@@ -32,6 +32,7 @@ namespace API
                 options.UseMySql(_config.GetConnectionString("DefaultConnection"), new MariaDbServerVersion(new Version(10, 3, 15)));
             });
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
@@ -51,6 +52,8 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
             app.UseAuthorization();
 
